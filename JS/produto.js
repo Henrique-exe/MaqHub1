@@ -60,3 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function adicionarAoCarrinho(produto) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.push(produto);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    alert("Produto adicionado ao carrinho!");
+}
+
+function adicionarFavorito(produto) {
+    let fav = JSON.parse(localStorage.getItem("favoritos")) || [];
+    fav.push(produto);
+    localStorage.setItem("favoritos", JSON.stringify(fav));
+    alert("Adicionado aos favoritos!");
+}

@@ -131,7 +131,7 @@ body {
     text-transform: uppercase;
     transition: background-color 0.3s ease;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 .cta-button:hover {
@@ -213,4 +213,18 @@ body {
 
 .description-content ul li {
     margin-bottom: 10px;
+}.tda-button {
+    background-color: #cc0000; /* Vermelho forte */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    width: 75%;
+    margin-bottom: 25px;
+    
 }

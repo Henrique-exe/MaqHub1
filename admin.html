@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - MaqHub</title>
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/admin.css">
+</head>
+
+<body>
+
+    <nav class="navbar"></nav>
+
+    <main class="admin-container">
+        <h1>Painel Administrativo</h1>
+
+        <form id="product-form" class="form-admin">
+            <input type="text" id="nome" placeholder="Nome do Produto" required>
+            <input type="text" id="categoria" placeholder="Categoria" required>
+            <input type="number" id="preco" placeholder="Preço" required>
+            <input type="text" id="imagem" placeholder="URL da Imagem" required>
+
+            <textarea id="descricao" placeholder="Descrição do Produto" required></textarea>
+
+            <button type="submit" class="cta-button">Cadastrar Produto</button>
+        </form>
+
+        <h2>Produtos Cadastrados</h2>
+        <div id="product-list" class="grid"></div>
+    </main>
+
+    <footer class="background"></footer>
+
+    <script src="JS/admin.js"></script>
+</body>
+
+</html>
