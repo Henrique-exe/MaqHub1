@@ -1,0 +1,94 @@
+.admin-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.admin-container h1 {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.form-admin {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-admin input,
+.form-admin textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.form-admin input:focus,
+.form-admin textarea:focus {
+    border-color: #c30000;
+}
+
+.form-admin textarea {
+    height: 130px;
+    resize: none;
+}
+
+.cta-button {
+    background: #c30000;
+    color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cta-button:hover {
+    background: #8f0000;
+}
+
+.admin-container h2 {
+    margin-top: 40px;
+    font-size: 26px;
+}
+
+.grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.produto-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.produto-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.produto-card h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.produto-card p {
+    font-size: 15px;
+    color: #444;
+}

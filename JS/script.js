@@ -120,3 +120,26 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("favoritos-home-container");
+
+    if (!container) return;
+
+    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    const quatroFavoritos = favoritos.slice(0, 4);
+
+    if (quatroFavoritos.length === 0) {
+        container.innerHTML = "<p>Nenhum produto favoritado ainda.</p>";
+        return;
+    }
+
+    quatroFavoritos.forEach(produto => {
+        container.innerHTML += `
+            <div class="product-card" onclick="window.location.href='produto.html?id=${produto.id}'">
+                <img src="${produto.imagem}">
+                <h3>${produto.nome}</h3>
+            </div>
+        `;
+    });
+});

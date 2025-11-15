@@ -32,7 +32,7 @@
                 <li><a href="login.html">Conta</a></li>
             </ul>
             <div class="nav-icon-container">
-               <a href="carrinho.html"> <img src="Icons/cart.png" alt="cart" title="Carrinho"></a>
+                <a href="carrinho.html"> <img src="Icons/cart.png" alt="cart" title="Carrinho"></a>
                 <img src="Icons/menu.png" alt="menu" class="menu-bttn" title="Menu">
             </div>
         </div>
@@ -96,40 +96,15 @@
         </section>
 
         <!-- Produtos Selecionados -->
-        <section id="produtos">
-            <div class="page-inner-content">
-                <h3 class="section-title">Produtos Selecionados</h3>
-                <div class="subtitle"></div>
-                <div class="cols cols-4">
-                    <article class="product">
-                        <img src="img/Product1.jpg" alt="Colhedora Austoft 9000">
-                        <p class="product-name">Colhedora Austoft 9000</p>
-                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-                        <p class="product-price">300,00 <span>R$</span></p>
-                    </article>
-                    <article class="product">
-                        <img src="img/Product3.webp" alt="TECTOR 17-320 COLETA">
-                        <p class="product-name">TECTOR 17-320 COLETA</p>
-                        <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
-                        <p class="product-price">300,00 <span>R$</span></p>
-                    </article>
-                    <article class="product">
-                        <img src="img/Product4.png" alt="Combo Gamer Meetion">
-                        <p class="product-name">Combo Gamer Meetion</p>
-                        <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-                        <p class="product-price">300,00 <span>R$</span></p>
-                    </article>
-                    <article class="product">
-                        <a href="product1.html"><img src="img/product16.jpg" alt="Combo Gamer Meetion"></a>
-                        <p class="product-name">Combo Gamer Meetion</p>
-                        <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
-                        <p class="product-price">300,00 <span>R$</span></p>
-                    </article>
+        <section class="favoritos-home">
+            <h2>Produtos Favoritados</h2>
+            <div class="underline"></div>
 
-                    <!-- Repita os produtos como <article> -->
-                </div>
-            </div>
+            <div id="favoritos-home-container" class="product-grid"></div>
+
+            <a href="favoritos.html" class="ver-todos-favoritos-btn">Ver todos favoritos</a>
         </section>
+
 
         <!-- Últimos Produtos -->
         <section>
@@ -274,6 +249,8 @@
     </footer>
 
     <script src="JS/script.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
 </body>
 
 </html>

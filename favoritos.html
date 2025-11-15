@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +7,40 @@
 
     <link rel="stylesheet" href="Styles/Globals.css">
     <link rel="stylesheet" href="Styles/favoritos.css">
+
+   
 </head>
 
 <body>
 
-    <nav class="navbar"></nav>
-
-    <main class="favorites-container">
-        <h1>Produtos Favoritos</h1>
-
-        <div id="favorite-items" class="grid"></div>
-    </main>
-
-    <footer class="background"></footer>
+    <section class="favoritos-page">
+        <h1>Todos os Favoritos</h1>
+        <div class="underline"></div>
+        <div id="favoritos-grid" class="favoritos-grid"></div>
+    </section>
 
     <script src="JS/favorito.js"></script>
-</body>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const grid = document.getElementById("favoritos-grid");
+            const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+            if (favoritos.length === 0) {
+                grid.innerHTML = "<p>Nenhum produto favoritado.</p>";
+                return;
+            }
+
+            favoritos.forEach(produto => {
+                grid.innerHTML += `
+                    <div class="fav-card" onclick="window.location.href='produto.html?id=${produto.id}'">
+                        <img src="${produto.imagem}">
+                        <h3>${produto.nome}</h3>
+                    </div>
+                `;
+            });
+        });
+    </script>
+
+</body>
 </html>
