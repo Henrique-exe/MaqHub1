@@ -143,3 +143,27 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Seleciona os elementos
+    const searchToggle = document.getElementById('search-toggle');
+    const searchContainer = document.getElementById('search-container');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchToggle && searchContainer) {
+        // Adiciona o evento de clique na lupa
+        searchToggle.addEventListener('click', () => {
+            
+            // Alterna a classe 'active'
+            // Isso faz a barra crescer (max-height: 0 -> 100px) no CSS
+            searchContainer.classList.toggle('active');
+            
+            // Se abriu, foca no campo de texto automaticamente
+            if(searchContainer.classList.contains('active')) {
+                setTimeout(() => {
+                    if(searchInput) searchInput.focus();
+                }, 100);
+            }
+        });
+    }
+});
