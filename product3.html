@@ -42,7 +42,7 @@
             </div>
 
             <div class="product-main-image">
-                <img src="img/Product6-removebg-preview.png" alt="Caminhão IVECO Tector - Imagem Principal"
+                <img src="img/Product3.jpg" alt="Caminhão IVECO Tector - Imagem Principal"
                     id="main-product-image">
             </div>
 
@@ -51,6 +51,8 @@
                 <p class="category">CATEGORIAS: IVECO, CAMINHÕES, TRANSPORTE</p>
 
                 <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
 
                 <div class="product-tags">
                     <span>Baixo Custo Operacional</span>
@@ -67,7 +69,7 @@
                 <ul>
                     <li class="active"><a href="#descricao">Descrição</a></li>
                     <li><a href="#especificacoes">Especificações</a></li>
-                    
+
                 </ul>
             </nav>
 
@@ -123,9 +125,18 @@
 
     <footer class="background">
     </footer>
+<script>
+        const produto = {
+            id: "ivecotector",
+            nome: "IVECO Tector",
+            preco: 0,
+            imagem: "img/Product3.jpg"
+        };
+    </script>
 
-    <script src="JS/script.js"></script>
     <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
 
 </body>
 

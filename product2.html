@@ -50,6 +50,8 @@
                 <p class="category">CATEGORIAS: CASE IH, COLHEITADEIRAS DE CANA</p>
 
                 <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
 
                 <div class="product-tags">
                     <span>Motor 420 cv</span>
@@ -120,9 +122,19 @@
 
     <footer class="background">
     </footer>
+<script>
+        const produto = {
+            id: "austoft9000",
+            nome: "Austoft 9000",
+            preco: 0,
+            imagem: "img/Product7-removebg-preview.png"
+        };
+    </script>
 
-    <script src="JS/script.js"></script>
     <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
 
 </body>
 
