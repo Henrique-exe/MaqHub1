@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroescavadeira B80C - New Holland Construction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product6.jpg" alt="Retroescavadeira B80C - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product6.jpg" alt="Retroescavadeira B80C - Vista da Cabine">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product6.jpg" alt="Retroescavadeira B80C - Detalhe do Braço">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Product6.jpg" alt="Retroescavadeira B80C - Imagem Principal"
+                    id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>Retroescavadeira B80C</h1>
+                <p class="category">CATEGORIAS: NEW HOLLAND, RETROESCAVADEIRAS, CONSTRUÇÃO</p>
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+                
+                <div class="product-tags">
+                    <span>Motor FPT TIER3</span>
+                    <span>Alta Força de Escavação</span>
+                    <span>Braços SLA</span>
+                    <span>Cabine ROPS/FOPS</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Especificações</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>A **Retroescavadeira B80C**, da New Holland Construction, mantém a tradição da marca ao oferecer uma
+                    máquina robusta e eficiente, ideal para abertura de valas ou escavações de alto desempenho. Ela se
+                    destaca por sua **alta força de escavação** e diferenciais operacionais que garantem máxima
+                    produtividade.</p>
+
+                <p>Equipada com o **motor FPT TIER3**, a B80C possui certificação para baixas emissões, unindo potência
+                    à sustentabilidade. A cabine é ampla, com certificação **ROPS/FOPS**, e possui **vidro frontal
+                    laminado**, duas portas e **HVAC de série**, contribuindo para o conforto e segurança do operador.
+                </p>
+
+                <h3>Performance e Operação</h3>
+                <ul>
+                    <li>**Força Líder:** Força de desagregação entre as maiores do mercado, garantindo ciclos rápidos e
+                        movimentos simultâneos do braço e da concha.</li>
+                    <li>**Tecnologia SLA:** Altura de descarga máxima privilegiada com os braços **SLA** (Sistema de
+                        Levantamento da Lança).</li>
+                    <li>**Potência Direcionada:** Função **Declutch** para direcionamento de maior potência ao sistema
+                        hidráulico durante a operação.</li>
+                    <li>**Mobilidade Off-Road:** Potência e altura do chassi ao solo diferenciadas para superar
+                        obstáculos em condições de carga.</li>
+                </ul>
+
+                <h3>Conforto e Manutenção</h3>
+                <ul>
+                    <li>**Manutenção Simplificada:** Novo capô com abertura ampla que proporciona acesso rápido e fácil
+                        aos pontos de manutenção.</li>
+                    <li>**Cabine Premium:** Ampla cabine com certificações de segurança (ROPS/FOPS) e conforto, com
+                        vidros laminados e sistema de climatização (HVAC) de série.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Especificações Técnicas (Retroescavadeira B80C)</h3>
+                <ul>
+                    <li>**Motor:** FPT TIER3</li>
+                    <li>**Certificação:** Tier III (Baixas Emissões)</li>
+                    <li>**Cabine:** Ampla, ROPS/FOPS (Estruturas Protetoras contra Capotamento/Queda de Objetos)</li>
+                    <li>**Recursos Hidráulicos:** Braços SLA, Função Declutch</li>
+                    <li>**Desempenho:** Ciclos Rápidos, Alta Força de Escavação/Desagregação</li>
+                    <li>**Conforto:** Vidro Frontal Laminado, 2 Portas, HVAC de Série</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+
+    <script>
+        const produto = {
+            id: "retroescavadeira-b80c",
+            nome: "Retroescavadeira B80C",
+            preco: 0,
+            imagem: "img/Product6.jpg"
+        };
+    </script>
+    <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+</body>
+
+</html>

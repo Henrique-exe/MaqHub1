@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escavadeira E145C EVO - New Holland</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product8.jpg" alt="Escavadeira E145C EVO - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product8.jpg" alt="Escavadeira E145C EVO - Vista Lateral">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product8.jpg" alt="Escavadeira E145C EVO - Detalhe da Caçamba">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Product8.jpg" alt="Escavadeira New Holland E145C EVO - Imagem Principal"
+                    id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>Escavadeira E145C EVO</h1>
+                <p class="category">CATEGORIAS: NEW HOLLAND, ESCAVADEIRAS, CONSTRUÇÃO</p>
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+
+                
+                <div class="product-tags">
+                    <span>Motor Isuzu TIER-III</span>
+                    <span>Sistema Hidráulico Aprimorado</span>
+                    <span>Cabine EVO Certificada</span>
+                    <span>Desempenho Superior</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Especificações</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>A **Escavadeira New Holland Série C EVO** é uma máquina avançada, destacando-se por seu **desempenho
+                    superior** e alta **eficiência energética**. O modelo **E145C EVO** vem equipado com um novo
+                    **sistema hidráulico aprimorado** e um braço robusto do tipo HD, garantindo durabilidade e precisão
+                    nas operações.</p>
+
+                <p>Para o operador, a **cabine EVO** é certificada internacionalmente, oferecendo segurança, **máximo
+                    conforto** e ampla visibilidade. A E145C EVO possui um extenso conjunto de recursos padrão para
+                    otimizar o trabalho e a manutenção.</p>
+
+                <h3>Recursos e Desempenho</h3>
+                <ul>
+                    <li>**Motor:** **Isuzu Turboalimentado TIER-III** com controle eletrônico de aceleração, combinando
+                        potência e sustentabilidade.</li>
+                    <li>**Sistema Hidráulico:** Controles ISO, **auto power-boost** e duas bombas de pistão para
+                        garantir máxima eficiência nas operações e força de escavação.</li>
+                    <li>**Chassi Superior:** Possui lança monobloco e **freio de giro eletrônico** para maior controle.
+                    </li>
+                    <li>**Chassi Inferior:** Conta com sapatas de **600 mm** e acionamento hidrostático para excelente
+                        tração.</li>
+                    <li>**Caçamba:** Caçamba **GD (General Duty)** de 0,65 m³ que contribui para a versatilidade da
+                        escavadeira.</li>
+                </ul>
+
+                <h3>Conforto e Manutenção</h3>
+                <ul>
+                    <li>**Cabine e Conforto:** Cabine EVO com sistema de amortecimento, **ar-condicionado** e rádio.
+                    </li>
+                    <li>**Manutenção Simplificada:** Recursos como **lubrificação centralizada** e sistema elétrico com
+                        monitoramento eletrônico facilitam a manutenção diária.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Especificações Técnicas (E145C EVO)</h3>
+                <ul>
+                    <li>**Motor:** Isuzu Turboalimentado</li>
+                    <li>**Emissão:** TIER-III</li>
+                    <li>**Caçamba Padrão:** GD de 0,65 m³</li>
+                    <li>**Chassi Superior:** Lança Monobloco, Freio de Giro Eletrônico</li>
+                    <li>**Chassi Inferior:** Sapatas de 600 mm, Acionamento Hidrostático</li>
+                    <li>**Sistema Hidráulico:** Duas Bombas de Pistão, Auto Power-Boost</li>
+                    <li>**Cabine:** EVO Certificada, Ar-condicionado, Rádio, Amortecimento</li>
+                    <li>**Outros:** Lubrificação Centralizada, Baterias Duplas</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+    <script>
+        const produto = {
+            id: "escavadeira-e145c-evo",
+            nome: "Escavadeira E145C EVO",
+            preco: 0,
+            imagem: "img/Product8.jpg"
+        };
+    </script>
+    <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
+</body>
+
+</html>

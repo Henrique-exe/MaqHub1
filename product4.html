@@ -28,30 +28,32 @@
                 <button class="arrow-nav up">&#9650;</button>
                 <div class="thumbnail-list">
                     <div class="thumbnail-item active">
-                        <img src="img/Minibus-Vista1-removebg-preview.png" alt="Minibus - Vista 1">
+                        <img src="img/Product4.jpg" alt="Minibus - Vista 1">
                     </div>
                     <div class="thumbnail-item">
-                        <img src="img/Minibus-thumb2.jpg" alt="Minibus - Vista 2 (Interior)">
+                        <img src="img/Product4.jpg" alt="Minibus - Vista 2 (Interior)">
                     </div>
                     <div class="thumbnail-item">
-                        <img src="img/Minibus-thumb3.jpg" alt="Minibus - Vista 3 (Traseira)">
+                        <img src="img/Product4.jpg" alt="Minibus - Vista 3 (Traseira)">
                     </div>
                 </div>
                 <button class="arrow-nav down">&#9660;</button>
             </div>
 
             <div class="product-main-image">
-                <img src="img/Minibus-Vista1-removebg-preview.png" alt="IVECO Daily MINIBUS 45-160 - Imagem Principal"
-                    id="main-product-image">
+                <img src="img/Product4.jpg" alt="IVECO Daily MINIBUS 45-160 - Imagem Principal" id="main-product-image">
             </div>
 
             <div class="product-info-details">
                 <h1>IVECO Daily MINIBUS 45-160 Euro 6</h1>
                 <p class="category">CATEGORIAS: IVECO, VANS E MINIBUS, TRANSPORTE</p>
 
+
+
                 <button class="cta-button">Solicitar Cotação</button>
                 <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
                 <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+
 
                 <div class="product-tags">
                     <span>MINI no Consumo</span>
@@ -74,4 +76,67 @@
 
             <div class="description-content" id="descricao">
                 <p>Apresentamos a solução ideal para o transporte de passageiros: a nova **Mini Bus IVECO Daily 45-160
-                    Euro 6
+                    Euro 6** (15+1 lugares), uma inovação que redefine o conceito de eficiência. Com desempenho **MINI
+                    no consumo** e generosidade **BUS no espaço**, esta é a escolha definitiva, alinhada à mais recente
+                    e versátil solução do mercado.</p>
+
+                <p>Equipada com atributos de fábrica que incluem **durabilidade, segurança, conforto e robustez**, a
+                    Daily Minibus destaca-se com firmeza. O conjunto Powertrain (motor, caixa de câmbio e eixo traseiro)
+                    proporciona uma notável potência nas subidas e agilidade nas arrancadas, tudo isso com um consumo de
+                    combustível surpreendentemente baixo.</p>
+
+                <h3>Versões e Capacidade</h3>
+                <ul>
+                    <li>**Fretamento:** Acomoda até **15 passageiros** + motorista. Poltronas fixas, revestimento em
+                        courvin e piso plano, garantindo conforto e praticidade.</li>
+                    <li>**Turismo:** Igualmente para **15 passageiros** + motorista. Desfrute de poltronas reclináveis,
+                        revestimento em tecido, um patamar elevado para visão privilegiada e um espaçoso bagageiro
+                        traseiro.</li>
+                </ul>
+
+                <h3>Principais Atributos</h3>
+                <ul>
+                    <li>**Chassi Robusto:** Garante resistência, força inigualável, agilidade nas cidades e estabilidade
+                        nas rodovias.</li>
+                    <li>**Ergonomia Máxima:** Dirigibilidade e conforto otimizados para o motorista.</li>
+                    <li>**Design Refinado:** Elegância e funcionalidade combinadas de maneira marcante.</li>
+                    <li>**Solução Versátil:** Projetada para se ajustar perfeitamente a diferentes necessidades de
+                        serviço.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Especificações Técnicas (Daily Minibus 45-160)</h3>
+                <ul>
+                    <li>**Modelo:** Iveco Daily Minibus 45-160 Euro 6</li>
+                    <li>**Capacidade:** 15 Passageiros + Motorista (15+1)</li>
+                    <li>**Versões:** Fretamento (Poltrona Fixa/Courvin) e Turismo (Poltrona Reclinável/Tecido/Bagageiro)
+                    </li>
+                    <li>**Motor/Potência:** Consultar (Equipada com Powertrain de alta performance)</li>
+                    <li>**Chassi:** Robusto (Garante força e estabilidade)</li>
+                    <li>**Diferenciais:** Consumo MINI, Espaço BUS, Durabilidade, Segurança e Conforto.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+
+    <script>
+        const produto = {
+            id: "ivecodaily",
+            nome: "Iveco Daily Minibus",
+            preco: 0,
+            imagem: "img/Product4.jpg"
+        };
+    </script>
+       <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+</body>
+
+</html>

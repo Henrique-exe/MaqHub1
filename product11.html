@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECTOR 17-320 COLETA - IVECO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product11.webp" alt="Tector 17-320 - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product11.webp" alt="Tector - Vista Cabine">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product11.webp" alt="Tector - Detalhe Motor">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Tector17-320-Vista1-removebg-preview.png"
+                    alt="Caminhão IVECO TECTOR 17-320 COLETA - Imagem Principal" id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>TECTOR 17-320 COLETA</h1>
+                <p class="category">CATEGORIAS: IVECO, CAMINHÕES SEMIPESADOS, VEÍCULOS VOCACIONAIS</p>
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+                <div class="product-tags">
+                    <span>Melhor Custo Operacional</span>
+                    <span>Motor FPT NEF</span>
+                    <span>Cabine Silenciosa</span>
+                    <span>Ideal para Serviços Públicos</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Diferenciais e Motor</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>O **IVECO Tector 17-320 Coleta** faz parte da renomada linha Tector, reconhecida por transportadores
+                    e motoristas pelo seu **baixo custo operacional, potência e conforto**. Com grande versatilidade,
+                    este caminhão semipesado é preparado para atender a diversas demandas, desde o varejo até operações
+                    vocacionais e serviços públicos.</p>
+
+                <p>Com opções de 15 a 31 toneladas (dependendo da versão), o Tector é um caminhão que pode ser adaptado
+                    para uma ampla gama de aplicações, incluindo coletas, entregas intermunicipais, urbanas (alimentos,
+                    bebidas, cargas perecíveis e fracionadas), além de construção e agronegócio.</p>
+
+                <h3>Conforto e Qualidade de Vida a Bordo</h3>
+                <ul>
+                    <li>**Cabine Projetada:** Design moderno e robusto, com amplo espaço para viagens seguras e
+                        tranquilas. Totalmente projetada para a comodidade do motorista.</li>
+                    <li>**Suspensão Avançada:** Suspensão da cabine com coxim, mola e amortecedor, e nos quatro cantos
+                        com molas helicoidais, garantindo uma condução silenciosa e confortável.</li>
+                    <li>**Ergonomia:** Câmbio integrado ao painel, coluna de direção regulável e **banco do motorista
+                        com suspensão pneumática**.</li>
+                </ul>
+
+                <h3>Economia e Desempenho (O Tector é um Negoção)</h3>
+                <ul>
+                    <li>**Custo Operacional:** O melhor da categoria, com manutenção preventiva mais em conta, **baixo
+                        consumo de combustível** e contrato de manutenção competitivo.</li>
+                    <li>**Adaptado ao Brasil:** Conhece bem as dificuldades das ruas e estradas brasileiras, combinando
+                        com o seu bolso e o seu negócio.</li>
+                    <li>**Tecnologia:** Conta com computador de bordo para gerenciar várias funções do caminhão e
+                        sistema inteligente de direção.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Diferenciais e Especificações do Motor (Exemplo da Linha)</h3>
+                <ul>
+                    <li>**Motor:** Série FPT NEF (Potente, leve e econômico)</li>
+                    <li>**Cilindrada:** 4.500 cm³ (4 cilindros)</li>
+                    <li>**Potência (Exemplo Tector 15-190):** 190 cv @ 2.500 rpm</li>
+                    <li>**Torque (Exemplo Tector 15-190):** 62,2 kgfm @ 1.350 rpm/2.100 rpm</li>
+                    <li>**Diferenciais:** Permite o aumento da carga útil. Alto desempenho, sem abrir mão da
+                        rentabilidade.</li>
+                    <li>**Cabine:** Opções Curta ou Leito.</li>
+                    <li>**Suspensão Cabine:** Molas Helidocais e Amortecedores Telescópicos.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+   <script>
+        const produto = {
+            id: "tectorcoleta",
+            nome: "TECTOR 17-320 COLETA",
+            preco: 0,
+            imagem: "img/Product11.webp"
+        };
+    </script>
+    <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
+</body>
+
+</html>

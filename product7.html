@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAILY 70-180 – CHASSI MOTORHOME - IVECO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product7.png" alt="Chassi Motorhome - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product7.png" alt="Chassi Motorhome - Vista Cabine">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product7.png" alt="Chassi Motorhome - Detalhe do Motor">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Product7.png" alt="IVECO DAILY 70-180 - CHASSI MOTORHOME - Imagem Principal"
+                    id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>DAILY 70-180 – CHASSI MOTORHOME</h1>
+                <p class="category">CATEGORIAS: IVECO, CAMINHÕES LEVES, CHASSIS</p>
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+                
+                <div class="product-tags">
+                    <span>Motor F1C-MAX</span>
+                    <span>160cv de Potência</span>
+                    <span>Eco Switch</span>
+                    <span>Ideal para Motorhomes</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Especificações</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>O **IVECO Daily 70-180 Chassi Motorhome** é a base ideal para seu veículo de recreação ou transporte
+                    diário. Equipado com o novo motor **F1C-MAX turbo**, ele garante performance e respostas mais
+                    rápidas na cidade, com potência máxima, economia e sustentabilidade.</p>
+
+                <p>O veículo foi projetado para oferecer o máximo em conforto e segurança. Dirija de forma segura e
+                    confortável com eficiência na frenagem, controle de estabilidade e máximo conforto ao dirigir,
+                    graças à cabine mais silenciosa, novos bancos, regulagens e ar-condicionado digital.</p>
+
+                <h3>Performance e Economia</h3>
+                <ul>
+                    <li>**Potência e Desempenho:** São **160cv** de potência com turbina GVT, garantindo excelente
+                        desempenho em subidas e partidas em rampas.</li>
+                    <li>**Transmissão:** Transmissão mecânica de **6 marchas** sincronizadas à frente e 1 à ré.</li>
+                    <li>**Eco Switch:** Reduza o consumo de combustível em condições de pouca carga com a função **Eco
+                        Switch**.</li>
+                    <li>**Baixo Custo Operacional:** Excelente relação custo-benefício, garantindo baixo consumo e
+                        agregando valor ao seu negócio.</li>
+                    <li>**Capacidade de Carga:** 200kg a mais de capacidade de carga em relação à versão anterior,
+                        otimizando sua performance e tempo.</li>
+                </ul>
+
+                <h3>Segurança e Design</h3>
+                <ul>
+                    <li>**Segurança Avançada:** Controle de estabilidade, frenagem e tração com dispositivos de alta
+                        tecnologia. Inclui **Airbag duplo** para motorista e passageiro.</li>
+                    <li>**Design Moderno:** Novas linhas arredondadas, grade frontal moderna e visual impactante. O
+                        design global é ideal para um veículo moderno, confortável, econômico, potente e sustentável.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Especificações Técnicas (Daily 70-180 Chassi)</h3>
+                <ul>
+                    <li>**Motor:** F1C-MAX Turbo</li>
+                    <li>**Potência:** 160 cv</li>
+                    <li>**Transmissão:** Mecânica, 6 marchas à frente + 1 à ré (Acionamento manual a cabo)</li>
+                    <li>**Turbina:** GVT</li>
+                    <li>**Segurança:** Airbag Duplo, Controle de Estabilidade, Frenagem e Tração.</li>
+                    <li>**Recursos de Economia:** Função Eco Switch</li>
+                    <li>**Conforto na Cabine:** Cabine Silenciosa, Bancos Reguláveis, Ar-condicionado Digital.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+    <script>
+        const produto = {
+            id: "ivecodaily70-180",
+            nome: "IVECO DAILY 70-180",
+            preco: 0,
+            imagem: "img/Product7.png"
+        };
+    </script>
+    <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
+</body>
+
+</html>

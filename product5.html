@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trator Farmall M ActiveDrive 4 - Case IH</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product5.jpg" alt="Farmall M - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product5.jpg" alt="Farmall M - Vista da Cabine">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product5.jpg" alt="Farmall M - Vista Traseira">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Product5.jpg" alt="Trator Case IH Farmall M ActiveDrive 4 - Imagem Principal"
+                    id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>Farmaii M ActiveDrive 4</h1>
+                <p class="category">CATEGORIAS: CASE IH, TRATORES, AGRONEGÓCIO</p>
+
+
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+
+
+
+                <div class="product-tags">
+                    <span>ActiveDrive 4</span>
+                    <span>Motor S8000</span>
+                    <span>Potência e Eficiência</span>
+                    <span>TDP de 3 Velocidades</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Especificações</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>Os tratores **Farmall M ActiveDrive 4** da Case IH oferecem um pacote exclusivo, com recursos
+                    superiores e inovações projetadas para atender a futuras necessidades do agronegócio. Com a
+                    **transmissão ActiveDrive 4**, a verdadeira potência ganha vida, combinando alto desempenho com
+                    eficiência.</p>
+
+                <p>No coração dos novos tratores Farmall M ActiveDrive 4 está o poderoso **motor S8000**, facilitando o
+                    trabalho no campo mesmo com a carga mais pesada. Projetado para combinar dois diferenciais em uma só
+                    máquina—**potência e eficiência**—o Farmall M garante produtividade em longas jornadas.</p>
+
+                <h3>Diferenciais do Trator Farmall Série M</h3>
+                <ul>
+                    <li>**Cabine Superior:** Cabine com controles ergonômicos, assento com suspensão a ar e teto solar
+                        para conforto e visibilidade.</li>
+                    <li>**Transmissão Vedada:** Vedação especial na transmissão, prevenindo a penetração de água e lama,
+                        aumentando a durabilidade.</li>
+                    <li>**Alta Capacidade Hidráulica:** Elevada capacidade do levante hidráulico, com **5.400 kg no
+                        olhal**.</li>
+                    <li>**Versatilidade de TDP:** Três diferentes velocidades de TDP: **540, 540E e 1.000 rpm**, e
+                        função de TDP automática.</li>
+                    <li>**Autonomia de Trabalho:** Tanque de combustível com **155 litros**, permitindo longas jornadas
+                        de trabalho com menos paradas.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Especificações Técnicas (Farmall M ActiveDrive 4)</h3>
+                <ul>
+                    <li>**Motor:** S8000 (Turbo Intercooler)</li>
+                    <li>**Emissão:** Nível MAR-1 (Tier 3)</li>
+                    <li>**Cilindros:** 4</li>
+                    <li>**Cilindrada:** 3.908 cm³</li>
+                    <li>**Torque Máximo:** 430 Nm @ 1.400 rpm</li>
+                    <li>**Transmissão:** ActiveDrive 4</li>
+                    <li>**Levante Hidráulico:** 5.400 kg (no olhal)</li>
+                    <li>**TDP (Rotações):** 540, 540E e 1.000 rpm</li>
+                    <li>**Capacidade do Tanque:** 155 litros</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+    <script>
+        const produto = {
+            id: "farmaiim",
+            nome: "Farmaii M ActiveDrive 4",
+            preco: 0,
+            imagem: "img/Product5.jpg"
+        };
+    </script>
+       <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+</body>
+
+</html>

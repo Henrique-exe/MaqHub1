@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trator Magnum 400 AFS Connect - Case IH</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Styles/Globals.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    </nav>
+
+
+    <main class="product-page-container">
+
+        <section class="product-main-info">
+
+            <div class="product-thumbnails">
+                <button class="arrow-nav up">&#9650;</button>
+                <div class="thumbnail-list">
+                    <div class="thumbnail-item active">
+                        <img src="img/Product10.jpg" alt="Trator Magnum 400 - Vista Principal">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product10.jpg" alt="Magnum 400 - Detalhe AFS Connect">
+                    </div>
+                    <div class="thumbnail-item">
+                        <img src="img/Product10.jpg" alt="Magnum 400 - Cabine">
+                    </div>
+                </div>
+                <button class="arrow-nav down">&#9660;</button>
+            </div>
+
+            <div class="product-main-image">
+                <img src="img/Product10.jpg" alt="Trator Case IH Magnum 400 AFS Connect - Imagem Principal"
+                    id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1>Magnum 400 AFS Connect</h1>
+                <p class="category">CATEGORIAS: CASE IH, TRATORES, AGRONEGÓCIO</p>
+
+                <button class="cta-button">Solicitar Cotação</button>
+                <button class="tda-button" onclick="adicionarAoCarrinho(produto)">Adicionar ao Carrinho</button>
+                <button class="tda-button" onclick="adicionarFavorito(produto)"> Favoritar </button>
+
+                
+                <div class="product-tags">
+                    <span>AFS Connect</span>
+                    <span>Agricultura Digital</span>
+                    <span>Conectividade Total</span>
+                    <span>Robusto e Alta Performance</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                    <li><a href="#especificacoes">Tecnologia</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>O novo **Magnum AFS Connect** chegou para ser o seu grande aliado na evolução da agricultura digital,
+                    garantindo o **controle total da sua operação**, em todos os momentos, de onde você e sua equipe
+                    estiverem. Com **400** implícito no nome, este trator sempre foi reconhecido pela sua
+                    **extraordinária capacidade de tração, grande robustez e alta performance**.</p>
+
+                <p>Agora, o Magnum mais uma vez eleva o patamar ao agregar os benefícios e as inovações da
+                    **conectividade total**. Isso assegura precisão e eficiência inéditas para sua operação.</p>
+
+                <h3>Preparado para o Agro Conectado</h3>
+                <p>Os tratores Magnum AFS Connect estabelecem novos parâmetros sobre o que a conectividade e a
+                    produtividade podem proporcionar. Você consegue:</p>
+                <ul>
+                    <li>**Monitoramento Remoto:** Gerencie e monitore seu trator à distância.</li>
+                    <li>**Intervenções a Distância:** Realize intervenções remotas, otimizando o tempo e maximizando os
+                        resultados.</li>
+                    <li>**Tomada de Decisão:** Utilize um conjunto integrado de tecnologias inéditas para usar todos os
+                        recursos de agricultura de precisão na hora da tomada de decisão.</li>
+                </ul>
+
+                <h3>Performance e Legado</h3>
+                <ul>
+                    <li>**Capacidade de Tração:** Reconhecida como extraordinária, para os trabalhos mais exigentes.
+                    </li>
+                    <li>**Robustez:** Construção robusta que garante durabilidade e confiabilidade no campo.</li>
+                    <li>**Alta Performance:** Desempenho otimizado para maior produtividade em diversas condições.</li>
+                </ul>
+            </div>
+
+            <div class="description-content" id="especificacoes" style="display:none;">
+                <h3>Tecnologia e Conectividade (AFS Connect)</h3>
+                <p>O Magnum AFS Connect é um sistema integrado que une hardware e software para levar a agricultura de
+                    precisão a um novo nível:</p>
+                <ul>
+                    <li>**Antena Receptora:** AFS Vector Pro (para o posicionamento e piloto automático).</li>
+                    <li>**Modem:** P&CM (Processamento de Dados e Conectividade).</li>
+                    <li>**Monitor:** Novo sistema de piloto automático com monitor **AFS Pro 1200**.</li>
+                    <li>**Conectividade:** Permite o gerenciamento e monitoramento remoto de toda a operação.</li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="background">
+    </footer>
+    <script>
+        const produto = {
+            id: "magnum-400",
+            nome: "Magnum 400 AFS Connect",
+            preco: 0,
+            imagem: "img/Product10.jpg"
+        };
+    </script>
+    <script src="JS/produto.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+
+</body>
+
+</html>
