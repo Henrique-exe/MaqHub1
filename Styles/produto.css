@@ -1,6 +1,17 @@
 /* Styles/produto.css */
 
 /* Define a fonte principal, herdando do seu global, mas garantindo */
+:root {
+    --primary-color: #F7C31B;
+    --secondary-color: #3D0066;
+    --background-color: #FEF5D9;
+    --secondary-color-light: #8238B3;
+    --primary-color-gold: #C78D17;
+    --font-family: 'Poppins', sans-serif;
+
+
+
+}
 body {
     font-family: 'Poppins', 'Arimo', sans-serif;
     background-color: #f9f9f9; /* Um fundo levemente cinza */

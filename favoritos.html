@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,38 @@
     <link rel="stylesheet" href="Styles/Globals.css">
     <link rel="stylesheet" href="Styles/favoritos.css">
 
-   
+
 </head>
 
 <body>
-
+    <nav class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">
+                <span class="logo-special">Maq</span>Hub
+            </h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="login.html">Conta</a></li>
+            </ul>
+            <div class="nav-icon-container">
+                <a href="carrinho.html"> <img src="Icons/cart.png" alt="cart" title="Carrinho"></a>
+                <img src="Icons/menu.png" alt="menu" class="menu-bttn" title="Menu">
+            </div>
+        </div>
+    </nav>
     <section class="favoritos-page">
         <h1>Todos os Favoritos</h1>
         <div class="underline"></div>
         <div id="favoritos-grid" class="favoritos-grid"></div>
     </section>
 
-    <script src="JS/favorito.js"></script>
+    <script src="JS/favoritos-home.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const grid = document.getElementById("favoritos-grid");
-            const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
-            if (favoritos.length === 0) {
-                grid.innerHTML = "<p>Nenhum produto favoritado.</p>";
-                return;
-            }
-
-            favoritos.forEach(produto => {
-                grid.innerHTML += `
-                    <div class="fav-card" onclick="window.location.href='produto.html?id=${produto.id}'">
-                        <img src="${produto.imagem}">
-                        <h3>${produto.nome}</h3>
-                    </div>
-                `;
-            });
-        });
-    </script>
 
 </body>
+
 </html>
