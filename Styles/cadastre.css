@@ -1,7 +1,17 @@
 /* Em Styles/login.css */
 
 /* Importa as variáveis globais (se não estiverem já importadas) */
-@import url('Globals.css');
+:root {
+    --primary-color: #F7C31B;
+    --secondary-color: #3D0066;
+    --background-color: #ccc4ab;
+    --secondary-color-light: #8238B3;
+    --primary-color-gold: #C78D17;
+    --font-family: 'Poppins', sans-serif;
+
+
+
+}
 
 * {
     margin: 0;

@@ -1,5 +1,15 @@
 /* Styles/perfil.css (Versão Melhorada) */
+:root {
+    --primary-color: #F7C31B;
+    --secondary-color: #3D0066;
+    --background-color: #ccc4ab;
+    --secondary-color-light: #8238B3;
+    --primary-color-gold: #C78D17;
+    --font-family: 'Poppins', sans-serif;
 
+
+
+}
 /* Reutiliza o .admin-container do admin.css mas adiciona espaçamento */
 .perfil-container {
     padding-top: 20px;
