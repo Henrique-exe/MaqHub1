@@ -1,5 +1,6 @@
-// JS/script.js (Versão Otimizada e Corrigida)
+// JS/script.js (Versão Unificada e Limpa)
 
+// Espera o HTML ser carregado UMA ÚNICA VEZ
 document.addEventListener("DOMContentLoaded", function() {
 
     // =======================================================
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // =======================================================
-    // 2. LÓGICA DO SLIDER E MENU (MOVIDA PARA CÁ)
+    // 2. LÓGICA DO SLIDER E MENU 
     // =======================================================
 
     const slides = document.querySelectorAll(".slide");
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuBttn = document.querySelector(".menu-bttn");
 
     // Se não houver slides, não execute a lógica do slider
-    if (slides.length > 0) {
+    if (slides.length > 0 && dotContainer && left && right) {
         let currentSlide = 0;
         const maxSlide = slides.length;
 
@@ -86,30 +87,24 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         // --- Inicialização do Slider ---
-        // (Movido do 'window.load' para aqui)
         createDots();
         goToSlide(currentSlide);
         activeDot(currentSlide);
 
         // --- Event Listeners do Slider ---
-        if (left) {
-            left.addEventListener("click", prevSlide);
-        }
-        if (right) {
-            right.addEventListener("click", nextSlide);
-        }
-        if (dotContainer) {
-            dotContainer.addEventListener("click", (e) => {
-                if (e.target.classList.contains("dots_dot")) {
-                    const slide = Number(e.target.dataset.slide);
-                    goToSlide(slide);
-                    activeDot(slide);
-                    currentSlide = slide;
-                }
-            });
-        }
+        left.addEventListener("click", prevSlide);
+        right.addEventListener("click", nextSlide);
+        
+        dotContainer.addEventListener("click", (e) => {
+            if (e.target.classList.contains("dots_dot")) {
+                const slide = Number(e.target.dataset.slide);
+                goToSlide(slide);
+                activeDot(slide);
+                currentSlide = slide;
+            }
+        });
 
-        // Auto-play (Opcional, adicionei para você)
+        // Auto-play (Opcional)
         setInterval(nextSlide, 7000); // Muda a cada 7 segundos
     }
 
@@ -119,51 +114,138 @@ document.addEventListener("DOMContentLoaded", function() {
             navbar.classList.toggle("show-menu");
         });
     }
-});
-document.addEventListener("DOMContentLoaded", () => {
+
+    // =======================================================
+    // 3. LÓGICA DOS FAVORITOS NA HOME
+    // =======================================================
+    
     const container = document.getElementById("favoritos-home-container");
 
-    if (!container) return;
+    if (container) {
+        const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+        const quatroFavoritos = favoritos.slice(0, 4);
 
-    const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-    const quatroFavoritos = favoritos.slice(0, 4);
-
-    if (quatroFavoritos.length === 0) {
-        container.innerHTML = "<p>Nenhum produto favoritado ainda.</p>";
-        return;
+        if (quatroFavoritos.length === 0) {
+            container.innerHTML = "<p>Nenhum produto favoritado ainda.</p>";
+        } else {
+            // Limpa o container antes de adicionar (boa prática)
+            container.innerHTML = ""; 
+            quatroFavoritos.forEach(produto => {
+                // (Mantido com innerHTML como solicitado)
+                container.innerHTML += `
+                    <div class="product-card" onclick="window.location.href='produto.html?id=${produto.id}'">
+                        <img src="${produto.imagem}">
+                        <h3>${produto.nome}</h3>
+                    </div>
+                `;
+            });
+        }
     }
 
-    quatroFavoritos.forEach(produto => {
-        container.innerHTML += `
-            <div class="product-card" onclick="window.location.href='produto.html?id=${produto.id}'">
-                <img src="${produto.imagem}">
-                <h3>${produto.nome}</h3>
-            </div>
-        `;
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
+// =======================================================
+    // 4. LÓGICA DA BARRA DE PESQUISA (AGORA COMPLETA)
+    // =======================================================
     
-    // Seleciona os elementos
     const searchToggle = document.getElementById('search-toggle');
     const searchContainer = document.getElementById('search-container');
     const searchInput = document.getElementById('search-input');
+    const searchResultsContainer = document.getElementById('search-results'); // Onde os resultados aparecem
 
-    if (searchToggle && searchContainer) {
-        // Adiciona o evento de clique na lupa
-        searchToggle.addEventListener('click', () => {
-            
-            // Alterna a classe 'active'
-            // Isso faz a barra crescer (max-height: 0 -> 100px) no CSS
+    if (searchToggle && searchContainer && searchInput && searchResultsContainer) {
+        
+        // Evento para ABRIR/FECHAR ao clicar na LUPA
+        searchToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); 
             searchContainer.classList.toggle('active');
             
-            // Se abriu, foca no campo de texto automaticamente
-            if(searchContainer.classList.contains('active')) {
-                setTimeout(() => {
-                    if(searchInput) searchInput.focus();
-                }, 100);
+            if (searchContainer.classList.contains('active')) {
+                setTimeout(() => searchInput.focus(), 100);
+            } else {
+                // Limpa os resultados ao fechar
+                searchResultsContainer.innerHTML = ''; 
+                searchInput.value = '';
             }
         });
+
+        // Evento para NÃO FECHAR ao clicar dentro da barra
+       // Seleciona os "filhos" da barra de pesquisa
+const searchInputWrapper = document.querySelector('.search-input-wrapper');
+const searchResults = document.getElementById('search-results');
+
+// Evento para NÃO FECHAR ao clicar DENTRO do conteúdo da busca
+if (searchInputWrapper) {
+    searchInputWrapper.addEventListener('click', (e) => {
+        e.stopPropagation(); // Impede o clique de fechar o modal
+    });
+}
+if (searchResults) {
+    searchResults.addEventListener('click', (e) => {
+        e.stopPropagation(); // Impede o clique de fechar o modal
+    });
+}
+
+        // ===================================
+        // NOVA LÓGICA DE BUSCA (Adicione isso)
+        // ===================================
+        
+        // Escuta o que o usuário digita
+        searchInput.addEventListener('keyup', () => {
+            const termo = searchInput.value.toLowerCase().trim();
+
+            // Se o campo estiver vazio, limpa os resultados
+            if (termo === '') {
+                searchResultsContainer.innerHTML = '';
+                return; 
+            }
+
+            // 1. FILTRAR o banco de dados (TODOS_OS_PRODUTOS vem do database.js)
+            const resultados = TODOS_OS_PRODUTOS.filter(produto => {
+                return produto.nome.toLowerCase().includes(termo);
+            });
+
+            // 2. EXIBIR os resultados
+            exibirResultados(resultados);
+        });
     }
+
+    /**
+     * Função que desenha os resultados na tela
+     */
+    function exibirResultados(resultados) {
+        // Limpa a lista anterior
+        searchResultsContainer.innerHTML = '';
+
+        if (resultados.length === 0) {
+            searchResultsContainer.innerHTML = '<div class="search-result-item no-results">Nenhum resultado encontrado.</div>';
+            return;
+        }
+
+        // Cria um item para cada resultado (limita a 5 para não quebrar o layout)
+        resultados.slice(0, 5).forEach(produto => {
+            // Cria um link seguro (sem innerHTML)
+            const link = document.createElement('a');
+            link.href = produto.pagina;
+            link.className = 'search-result-item'; 
+            link.textContent = produto.nome; 
+            
+            searchResultsContainer.appendChild(link);
+        });
+    }
+
+
+    // =======================================================
+    // 5. LÓGICA PARA FECHAR PESQUISA AO "CLICAR FORA"
+    // =======================================================
+    
+    // Escuta cliques no documento inteiro
+    document.addEventListener('click', () => {
+        if (searchContainer && searchContainer.classList.contains('active')) {
+            searchContainer.classList.remove('active');
+            
+            // Limpa os resultados ao fechar
+            searchResultsContainer.innerHTML = ''; 
+            searchInput.value = '';
+        }
+    });
+
 });
