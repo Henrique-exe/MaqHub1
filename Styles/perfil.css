@@ -1,28 +1,74 @@
-/* Apenas complementa o admin.css */
-.perfil-container h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+/* Styles/perfil.css (Versão Melhorada) */
+
+/* Reutiliza o .admin-container do admin.css mas adiciona espaçamento */
+.perfil-container {
+    padding-top: 20px;
 }
 
+.perfil-container h1 {
+    font-size: 2.5rem; /* Título maior */
+    color: #333;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.perfil-container h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Card "Meus Dados" */
 #dados-usuario {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Fundo suave */
+    border: 1px solid #eee;
+    padding: 30px; /* Mais espaçamento interno */
 }
 
 .input-grupo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     font-size: 1rem;
-    padding: 8px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #e9e9e9;
 }
+.input-grupo:last-child {
+    border-bottom: none;
+}
+
 .input-grupo label {
     font-weight: 600;
     color: #333;
-    flex-basis: 100px; /* Alinha os campos */
+    flex-basis: 120px; /* Largura fixa para alinhar */
 }
 .input-grupo p {
     font-weight: 500;
     color: #555;
+    margin: 0;
+}
+
+/* Formulário de Anúncio */
+#product-form {
+    margin-top: 15px;
+    /* (O estilo .form-admin do admin.css já se aplica aqui) */
+}
+
+/* Melhoria no input de ficheiro */
+#product-form input[type="file"] {
+    padding: 10px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+/* Botão de Publicar (usando cores do :root) */
+#product-form .cta-button {
+    background-color: var(--primary-color-gold);
+    font-weight: 600;
+}
+#product-form .cta-button:hover {
+    background-color: var(--primary-color);
 }

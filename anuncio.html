@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - MaqHub</title>
+    <title>Carregando... - MaqHub</title>
     <link rel="stylesheet" href="Styles/Globals.css">
-    <link rel="stylesheet" href="Styles/carrinho.css">
+    <link rel="stylesheet" href="Styles/produto.css">
+
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="header-inner-content">
 
@@ -22,7 +22,7 @@
             <!-- 2. LINKS (Centralizados Exatamente no Meio) -->
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li><a href="login.html">Conta</a></li>
@@ -71,27 +71,71 @@
         </div>
     </nav>
 
+    <main class="product-page-container">
 
-    <main class="cart-container">
-    <h1>Seu Carrinho</h1>
+        <section class="product-main-info">
 
-    <section id="cart-items">
+            <div class="product-main-image">
+                <img src="" alt="Imagem do Produto" id="main-product-image">
+            </div>
+
+            <div class="product-info-details">
+                <h1 id="product-name">Carregando...</h1>
+
+                <p class="category" id="product-category"></p>
+                <p class="product-seller" id="product-seller"></p>
+
+                <div class="product-price-tag" id="product-price"></div>
+
+                <button id="add-to-cart-btn" class="tda-button">Adicionar ao Carrinho</button>
+                <button id="add-to-fav-btn" class="tda-button">Favoritar</button>
+            </div>
         </section>
 
-    <aside class="cart-summary">
-        <h2>Resumo do Pedido</h2>
-        <div class="total-row">
-            <span>Total:</span>
-            <span id="cart-total">R$ 0,00</span>
+        <section class="product-description-area">
+
+            <nav class="description-tabs">
+                <ul>
+                    <li class="active"><a href="#descricao">Descrição</a></li>
+                </ul>
+            </nav>
+
+            <div class="description-content" id="descricao">
+                <p>Carregando...</p>
+            </div>
+
+        </section>
+    </main>
+    <footer class="background">
+        <div class="page-inner-content footer-content">
+
+            <div class="logo-footer">
+                <h1 class="logo">
+                    <span class="logo-special">Maq</span>Hub
+                </h1>
+                <p>Nosso objetivo é ajudar vendedores a levar suas maquinas de porte aos seus cliente com maior
+                    facilidade</p>
+            </div>
+            <nav class="link-footer">
+                <h3>Links úteis</h3>
+                <ul>
+                    <li><a href="#">Blog Post</a></li>
+                    <li><a href="#">Políticas</a></li>
+                    <li><a href="#">Torne-se afiliado</a></li>
+                </ul>
+            </nav>
         </div>
-        <button id="finalizar-compra" class="cta-button">Finalizar Pedido</button>
-    </aside>
-</main>
+        <hr class="page-inner-content">
 
+        <div class="page-inner-content copyright">
+            <p>copyright 2025 - Pablo Henrique - Todos os direitos reservados</p>
+        </div>
+    </footer>
 
-
-    <script src="JS/carrinho.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/carrinho.js"></script>
+    <script src="JS/favoritos-home.js"></script>
+    <script src="JS/anuncio.js"></script>
 </body>
 
 </html>

@@ -7,31 +7,34 @@ document.addEventListener("DOMContentLoaded", function() {
     // 1. LÓGICA DO SISTEMA DE LOGIN (COM SELETOR CORRIGIDO)
     // =======================================================
     
-    const dadosUsuarioLogado = sessionStorage.getItem("usuarioLogado");
+  const dadosUsuarioLogado = sessionStorage.getItem("usuarioLogado");
 
+    // Ele SÓ verifica se o usuário existe para mudar o menu
     if (dadosUsuarioLogado) {
         const usuarioLogado = JSON.parse(dadosUsuarioLogado);
-
-        // ATENÇÃO: Seletor corrigido para "login.html"
         const linkConta = document.querySelector('a[href="login.html"]');
         
         if (linkConta) {
             linkConta.textContent = `Olá, ${usuarioLogado.usuario}`;
-            linkConta.href = "#"; // Remove o link para a página de login
+            // MUDANÇA: Direciona para o perfil, e não mais para "#"
+            linkConta.href = "perfil.html"; 
 
+            // ... (código que adiciona o botão "Sair") ...
             const li = linkConta.parentElement;
             const navUl = li.parentElement;
 
-            const logoutLi = document.createElement("li");
-            logoutLi.innerHTML = '<a href="#" id="logout">Sair</a>';
-            
-            navUl.appendChild(logoutLi);
+            // Evita adicionar "Sair" várias vezes
+            if (!document.getElementById("logout")) {
+                const logoutLi = document.createElement("li");
+                logoutLi.innerHTML = '<a href="#" id="logout">Sair</a>';
+                navUl.appendChild(logoutLi);
 
-            document.getElementById("logout").addEventListener("click", function(e) {
-                e.preventDefault();
-                sessionStorage.removeItem("usuarioLogado");
-                window.location.reload(); // Recarrega a página para resetar
-            });
+                document.getElementById("logout").addEventListener("click", function(e) {
+                    e.preventDefault();
+                    sessionStorage.removeItem("usuarioLogado");
+                    window.location.reload();
+                });
+            }
         }
     }
 
@@ -189,23 +192,54 @@ if (searchResults) {
         // ===================================
         
         // Escuta o que o usuário digita
-        searchInput.addEventListener('keyup', () => {
-            const termo = searchInput.value.toLowerCase().trim();
+      // Dentro do JS/script.js
 
-            // Se o campo estiver vazio, limpa os resultados
-            if (termo === '') {
-                searchResultsContainer.innerHTML = '';
-                return; 
-            }
+searchInput.addEventListener('keyup', () => {
+    const termo = searchInput.value.toLowerCase().trim();
+    const resultsContainer = document.getElementById('search-results');
 
-            // 1. FILTRAR o banco de dados (TODOS_OS_PRODUTOS vem do database.js)
-            const resultados = TODOS_OS_PRODUTOS.filter(produto => {
-                return produto.nome.toLowerCase().includes(termo);
-            });
+    if (termo === '') {
+        resultsContainer.innerHTML = '';
+        return; 
+    }
 
-            // 2. EXIBIR os resultados
-            exibirResultados(resultados);
-        });
+    // 1. Pesquisa nos Produtos Estáticos (do database.js)
+    const resultadosEstaticos = TODOS_OS_PRODUTOS.filter(produto => 
+        produto.nome.toLowerCase().includes(termo)
+    );
+
+    // 2. Pesquisa nos Produtos Dinâmicos (do localStorage)
+    const produtosDinamicos = JSON.parse(localStorage.getItem("produtos")) || [];
+    const resultadosDinamicos = produtosDinamicos.filter(produto => 
+        produto.nome.toLowerCase().includes(termo)
+    );
+
+    // 3. Combina os resultados
+    resultsContainer.innerHTML = '';
+
+    if (resultadosEstaticos.length === 0 && resultadosDinamicos.length === 0) {
+        resultsContainer.innerHTML = '<div class="search-result-item no-results">Nenhum resultado encontrado.</div>';
+        return;
+    }
+
+    // 4. Exibe resultados estáticos
+    resultadosEstaticos.forEach(produto => {
+        resultsContainer.innerHTML += `
+            <a href="${produto.pagina}" class="search-result-item">
+                (Loja) ${produto.nome}
+            </a>
+        `;
+    });
+
+    // 5. Exibe resultados dinâmicos (anúncios)
+    resultadosDinamicos.forEach(produto => {
+        resultsContainer.innerHTML += `
+            <a href="anuncio.html?id=${produto.id}" class="search-result-item">
+                (Anúncio) ${produto.nome}
+            </a>
+        `;
+    });
+});
     }
 
     /**

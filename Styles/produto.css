@@ -14,7 +14,7 @@
 }
 body {
     font-family: 'Poppins', 'Arimo', sans-serif;
-    background-color: #f9f9f9; /* Um fundo levemente cinza */
+    background-color: var(--background-color); /* Um fundo levemente cinza */
 }
 
 /* Container principal da página de produto */
@@ -238,4 +238,24 @@ body {
     width: 75%;
     margin-bottom: 25px;
     
+}
+/* Em Styles/produto.css (adicionar no final) */
+
+/* Correção para o layout do anuncio.html
+  (Quando os thumbnails não existem) 
+*/
+.product-main-info .product-main-image {
+    flex-grow: 1; /* Faz a imagem crescer se não houver thumbnails */
+}
+
+.product-main-info .product-info-details {
+    flex-grow: 1.2; /* Faz os detalhes crescerem um pouco mais */
+}
+
+/* Garante que o botão de favoritar tenha o ícone (copiado do anuncio.html) */
+.tda-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
 }

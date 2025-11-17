@@ -202,7 +202,7 @@ nav ul li:hover {
 }
 
 header {
-    background-image: radial-gradient(#ccc4ab, #C78D17);
+    background-image: radial-gradient(white, #ccc4ab);
     position: relative;
     width: 100%;
     min-height: 500px;
@@ -577,8 +577,15 @@ main {
     gap: 30px;
     width: 80%;
     margin: 0 auto;
+      display: flex;
+    justify-content: center;
 }
-
+.product-grid p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+  
+}
 .product-card {
     background: white;
     padding: 15px;
@@ -600,7 +607,7 @@ main {
 
 .ver-todos-favoritos-btn {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 125px;
     padding: 10px 20px;
     background: var(--primary-color-gold);
     color: white;
@@ -608,6 +615,7 @@ main {
     text-decoration: none;
     transition: .3s;
     font-weight: 600;
+    
 }
 
 .ver-todos-favoritos-btn:hover {

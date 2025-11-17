@@ -1,10 +1,10 @@
+// JS/produtos.js (Versão Atualizada)
+
 document.addEventListener("DOMContentLoaded", () => {
     
     const productList = document.getElementById("product-list");
-
     if (!productList) return;
 
-    // Carrega TODOS os produtos salvos
     const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
     if (produtos.length === 0) {
@@ -12,26 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    productList.innerHTML = ""; // Limpa a lista
+    productList.innerHTML = ""; 
 
-    // Cria um card para cada produto
     produtos.forEach(produto => {
-        // (Usei innerHTML por simplicidade, como no seu admin.js)
+        // ***** MUDANÇA PRINCIPAL AQUI *****
+        // Criamos um link que leva à nossa página de template, passando o ID
         productList.innerHTML += `
-            <div class="produto-card">
-                <img src="${produto.imagem}" alt="${produto.nome}">
-                <h3>${produto.nome}</h3>
-                <p class="cat">${produto.categoria}</p>
-                <p class="price">R$ ${produto.preco.toFixed(2)}</p>
-                
-                ${produto.anunciante ? `<p class="anunciante">Por: ${produto.anunciante}</p>` : ''}
+            <div classa="produto-card">
+                <a href="anuncio.html?id=${produto.id}">
+                    <img src="${produto.imagem}" alt="${produto.nome}">
+                    <h3>${produto.nome}</h3>
+                    <p class="cat">${produto.categoria}</p>
+                    <p class="price">R$ ${produto.preco.toFixed(2)}</p>
+                    ${produto.anunciante ? `<p class="anunciante">Por: ${produto.anunciante}</p>` : ''}
+                </a>
             </div>
         `;
     });
 });
-
-// CSS Opcional para o card (em admin.css ou Globals.css)
-/* .produto-card .cat { font-size: 0.9rem; color: #777; }
-.produto-card .price { font-weight: 600; font-size: 1.1rem; color: #000; }
-.produto-card .anunciante { font-size: 0.8rem; color: #555; margin-top: 5px; }
-*/
+//Nota: Para os cartões (.produto-card) ficarem iguais aos da index.html, copie os estilos de .product e .cols-4 do Globals.css e aplique-os ao .produto-card e #product-list.

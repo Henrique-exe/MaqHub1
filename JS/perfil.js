@@ -1,57 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- 1. CARREGAR DADOS DO USUÁRIO ---
-    const usuarioLogado = JSON.parse(sessionStorage.getItem("usuarioLogado"));
-
-    if (!usuarioLogado) {
-        // Se não estiver logado, chuta de volta pro login
+    // Carrega usuário logado
+    const dadosUsuario = sessionStorage.getItem("usuarioLogado");
+    if (!dadosUsuario) {
         alert("Você precisa estar logado para ver esta página.");
         window.location.href = "login.html";
         return;
     }
 
-    // Preenche os campos "Meus Dados"
-    document.getElementById("user-usuario").textContent = usuarioLogado.usuario;
-    document.getElementById("user-email").textContent = usuarioLogado.email;
-    document.getElementById("user-telefone").textContent = usuarioLogado.telefone || "Não informado";
+    const usuarioLogado = JSON.parse(dadosUsuario);
 
-    
-    // --- 2. LÓGICA DO FORMULÁRIO DE ANÚNCIO ---
+    // Preenche os campos do perfil
+    const elUsuario = document.getElementById("user-usuario");
+    const elEmail = document.getElementById("user-email");
+    const elTelefone = document.getElementById("user-telefone");
+
+    if (elUsuario) elUsuario.textContent = usuarioLogado.usuario || usuarioLogado.nome || "Usuário";
+    if (elEmail) elEmail.textContent = usuarioLogado.email || "—";
+    if (elTelefone) elTelefone.textContent = usuarioLogado.telefone || "—";
+
+    // --- Lógica para publicar novo produto ---
     const form = document.getElementById("product-form");
+    if (!form) return;
 
-    form.addEventListener("submit", e => {
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Pega os dados do formulário
-        const nome = document.getElementById("nome").value;
-        const categoria = document.getElementById("categoria").value;
-        const preco = Number(document.getElementById("preco").value);
-        const imagem = document.getElementById("imagem").value;
-        const descricao = document.getElementById("descricao").value;
+        const nome = document.getElementById("nome").value.trim();
+        const categoria = document.getElementById("categoria").value.trim();
+        const preco = Number(document.getElementById("preco").value) || 0;
+        const imagemInput = document.getElementById("imagem");
+        const descricao = document.getElementById("descricao").value.trim();
 
-        // Cria o objeto do novo produto
-        const novoProduto = { 
-            nome, 
-            categoria, 
-            preco, 
-            imagem, 
-            descricao,
-            // Adiciona quem foi o anunciante!
-            anunciante: usuarioLogado.usuario 
+        if (!nome || !categoria || !imagemInput.files.length || !descricao) {
+            alert("Preencha todos os campos.");
+            return;
+        }
+
+        const file = imagemInput.files[0];
+        const reader = new FileReader();
+        reader.onload = function () {
+            const imagemDataUrl = reader.result;
+
+            // Cria ID simples (timestamp + random)
+            const id = `prod_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
+            const novoProduto = {
+                id,
+                nome,
+                categoria,
+                preco,
+                imagem: imagemDataUrl,
+                descricao,
+                anunciante: usuarioLogado.usuario || usuarioLogado.email || "Anunciante",
+                criadoEm: new Date().toISOString()
+            };
+
+            const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+            produtos.unshift(novoProduto); // adiciona no início
+            localStorage.setItem("produtos", JSON.stringify(produtos));
+
+            alert("Anúncio publicado com sucesso!");
+            form.reset();
+            // opcional: redirecionar para a página do anúncio
+            // window.location.href = `anuncio.html?id=${id}`;
         };
-
-        // Puxa a lista de produtos existente (a mesma do admin!)
-        const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-        
-        // Adiciona o novo produto na lista
-        produtos.push(novoProduto);
-
-        // Salva a lista atualizada de volta no localStorage
-        localStorage.setItem("produtos", JSON.stringify(produtos));
-
-        alert("Seu anúncio foi publicado com sucesso!");
-
-        form.reset(); // Limpa o formulário
+        reader.readAsDataURL(file);
     });
-
 });
