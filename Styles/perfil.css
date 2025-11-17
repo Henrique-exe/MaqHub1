@@ -1,0 +1,28 @@
+/* Apenas complementa o admin.css */
+.perfil-container h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+#dados-usuario {
+    background-color: #f9f9f9;
+}
+
+.input-grupo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 8px 0;
+}
+.input-grupo label {
+    font-weight: 600;
+    color: #333;
+    flex-basis: 100px; /* Alinha os campos */
+}
+.input-grupo p {
+    font-weight: 500;
+    color: #555;
+}

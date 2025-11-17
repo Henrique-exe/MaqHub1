@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="Styles/cadastre.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,61 +17,50 @@
 </head>
 
 <body>
-    <main class="container">
-        <form>
-            <h1>Registra-se</h1>
-            <div class="input-box">
-                <input placeholder="Email" type="email" required>
-                <i class="bx bxs-user"></i>
-            </div>
-            <div class="input-box">
-                <input placeholder="Usuário" type="text" required>
-                <i class="bx bxs-user"></i>
-            </div>
-            <div class="input-box">
-                <input placeholder="Senha" type="password" required>
-                <i class="bx bxs-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input placeholder="Confirme sua senha" type="password" required>
-                <i class="bx bxs-lock-alt"></i>
+
+    <main class="login-wrapper">
+
+        <div class="login-image">
             </div>
 
-            <div class="input-box">
-                <input placeholder="Telefone" type="tel" required>
-                <i class="bx bxs-user"></i>
-            </div>
+        <div class="login-form">
+            <form>
+                <h1>Crie sua Conta</h1>
 
+                <p class="subtitle">É rápido.</p>
 
-            <div class="gender-main">
-                <div class="gender-title">
-                    <p>Gênero</p>
+                <div class="input-box">
+                    <input placeholder="Email" type="email" required>
+                    <i class='bx bxs-envelope'></i>
                 </div>
-
-                <div class="gender">
-                    <label for="male">
-                        <input id="male" type="radio" name="genero"> Masculino
-                    </label>
-                    <label for="feminino">
-                        <input id="feminino" type="radio" name="genero"> Feminino
-                    </label>
-                    <label for="outro">
-                        <input id="outro" type="radio" name="genero"> Outro
-                    </label>
+                <div class="input-box">
+                    <input placeholder="Usuário" type="text" required>
+                    <i class='bx bxs-user'></i>
                 </div>
-            </div>
+                <div class="input-box">
+                    <input placeholder="Senha" type="password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box">
+                    <input placeholder="Confirme sua senha" type="password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box">
+                    <input placeholder="Telefone" type="tel" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    Registrar
+                </button>
+            </form>
+        </div>
 
-
-
-
-            <button type="submit" class="login">
-                Registra-se
-            </button>
-
-            </div>
-        </form>
     </main>
+
     <script src="JS/register.js"></script>
+    <script src="JS/login.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 
 </html>

@@ -15,35 +15,50 @@
     <title>Login - MaqHub</title>
 </head>
 
+
 <body>
-    <main class="container">
-        <form>
-            <h1>Login</h1>
-            <div class="input-box">
-                <input placeholder="Usuário" type="email">
-                <i class="bx bxs-user"></i>
+
+    <main class="login-wrapper">
+
+        <div class="login-image">
             </div>
-            <div class="input-box">
-                <input placeholder="Senha" type="password">
-                <i class="bx bxs-lock-alt"></i>
-            </div>
-            <div class="remember-forgot">
-                <label>
-                    <input type="checkbox">
-                    Lembrar a Senha
-                </label>
-                <a href="#">Esqueci a Senha</a>
-            </div>
-            <button type="submit" class="login">
-                Login
-            </button>
-            <div class="register">
-                <p>
-                    Não tem uma conta? <a href="cadastre.html" target="_self">Cadastre-se</a>
-                </p>
-            </div>
-        </form>
+
+        <div class="login-form">
+            <form>
+                <h1>Bem Vindo</h1>
+                <p class="subtitle"></p>
+
+                <div class="input-box">
+                    <input placeholder="Usuário ou Email" type="email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box">
+                    <input placeholder="Senha" type="password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox">
+                        Lembrar-me
+                    </label>
+                    </div>
+
+                <button type="submit" class="login-btn">
+                    Entrar
+                </button>
+
+                <div class="register">
+                    <p>
+                        Não tem uma conta? <a href="cadastre.html" target="_self">Crie uma</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
     </main>
+
     <script src="JS/login.js"></script>
 </body>
 

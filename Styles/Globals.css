@@ -18,9 +18,10 @@
 }
 
 
-html{
+html {
     background-color: var(--background-color);
 }
+
 html,
 body {
     width: 100%;
@@ -163,8 +164,9 @@ header .header-inner-content {
     border-radius: 4px;
     border: none;
     font-size: 1rem;
-   
+
 }
+
 .search-input {
     flex: 1;
 }
@@ -200,7 +202,7 @@ nav ul li:hover {
 }
 
 header {
-    background-image: radial-gradient( #ccc4ab, #C78D17);
+    background-image: radial-gradient(#ccc4ab, #C78D17);
     position: relative;
     width: 100%;
     min-height: 500px;
@@ -301,13 +303,15 @@ main {
 }
 
 .background {
-    background-color:var(--background-color);
+    background-color: var(--background-color);
 }
 
 .page-inner-content {
     max-width: 1280px;
     margin: 0 auto;
-}/* Remove a borda padrão branca do <hr> no footer */
+}
+
+/* Remove a borda padrão branca do <hr> no footer */
 
 
 
@@ -430,7 +434,7 @@ main {
     padding: 3rem 1rem;
     justify-content: center;
     gap: 2rem;
-    
+
 }
 
 .testimonial {
@@ -612,7 +616,7 @@ main {
 
 /* ===== FOOTER BASE ===== */
 footer.background {
-    background:black;
+    background: black;
     color: #fff;
     padding: 50px 0;
     margin-top: 60px;
@@ -698,7 +702,8 @@ footer.background {
 
 /* CADA link de resultado (cada linha) */
 .search-result-item {
-    display: block; /* <-- ESTA É A LINHA MAIS IMPORTANTE! */
+    display: block;
+    /* <-- ESTA É A LINHA MAIS IMPORTANTE! */
     padding: 12px 15px;
     color: #333;
     text-decoration: none;
@@ -717,56 +722,65 @@ footer.background {
 .search-result-item.no-results {
     color: #777;
     font-style: italic;
-    padding: 12px 15px; /* Garante que a mensagem de erro também tenha padding */
+    padding: 12px 15px;
+    /* Garante que a mensagem de erro também tenha padding */
 }
 
 /* Remove a linha separadora do último item */
 .search-result-item:last-child {
     border-bottom: none;
 }
+
 /* Em Globals.css */
 
 .search-bar-container {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* O fundo escuro (scrim) */
-    
+    background-color: rgba(0, 0, 0, 0.5);
+    /* O fundo escuro (scrim) */
+
     display: flex;
-    flex-direction: column; 
-    
+    flex-direction: column;
+
     /* === AQUI ESTÁ A MUDANÇA PRINCIPAL === */
-    justify-content: flex-start; /* Em vez de 'center', alinha no TOPO */
-    align-items: center; /* Mantém centralizado horizontalmente */
-    
+    justify-content: flex-start;
+    /* Em vez de 'center', alinha no TOPO */
+    align-items: center;
+    /* Mantém centralizado horizontalmente */
+
     /* Adiciona um espaço do topo, como na sua imagem */
-    padding-top: 10vh; /* 10% da altura da tela */
+    padding-top: 10vh;
+    /* 10% da altura da tela */
     /* ======================================= */
 
-    padding-left: 20px; /* Espaço das bordas */
-    padding-right: 20px; /* Espaço das bordas */
-    
-    z-index: 1000; 
+    padding-left: 20px;
+    /* Espaço das bordas */
+    padding-right: 20px;
+    /* Espaço das bordas */
+
+    z-index: 1000;
 
     opacity: 0;
-    visibility: hidden; 
+    visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 
     /* Limpa estilos antigos que não precisamos mais */
-    max-height: none; 
+    max-height: none;
     overflow: visible;
 }
 
 /* Esta regra .active continua igual, mas confira se o padding-top está nela */
 .search-bar-container.active {
     opacity: 1;
-    visibility: visible; 
+    visibility: visible;
 
     /* Limpa estilos antigos */
     max-height: none;
-    padding-top: 10vh; /* Garante que o padding se mantenha */
+    padding-top: 10vh;
+    /* Garante que o padding se mantenha */
     padding-left: 20px;
     padding-right: 20px;
     border-top: none;
@@ -774,25 +788,84 @@ footer.background {
 
 /* O wrapper dos inputs (a parte escura) */
 .search-input-wrapper {
-    background-color: #222; /* Cor escura original */
+    background-color: #222;
+    /* Cor escura original */
     padding: 15px;
-    border-radius: 6px 6px 0 0; /* Arredonda SÓ os cantos de cima */
-    
+    border-radius: 6px 6px 0 0;
+    /* Arredonda SÓ os cantos de cima */
+
     /* Remove o 'margin: 0 auto' pois o flex-container pai já centraliza */
-    margin: 0; 
+    margin: 0;
 }
 
 /* O container de resultados (a parte clara) */
 #search-results {
     /* (Estes estilos você já deve ter da minha resposta anterior) */
-    background-color: #f1f1f1; 
+    background-color: #f1f1f1;
     width: 100%;
     max-width: 700px;
-    margin-top: 0; /* Cola perfeitamente na barra de cima */
-    border-radius: 0 0 6px 6px; /* Arredonda SÓ os cantos de baixo */
+    margin-top: 0;
+    /* Cola perfeitamente na barra de cima */
+    border-radius: 0 0 6px 6px;
+    /* Arredonda SÓ os cantos de baixo */
     max-height: 300px;
     overflow-y: auto;
 }
+
+.produto-card .cat {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.produto-card .price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.produto-card .anunciante {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Estilização dos Banners de Categoria (id="maquinas") */
+#maquinas .cols-3 {
+    padding-top: 2rem; /* Dá um espaço do título da seção */
+}
+
+.card-maquina {
+    display: block;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden; /* Garante que a imagem não vaze do border-radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-maquina:hover {
+    transform: translateY(-8px); /* Efeito de "levantar" */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card-maquina img {
+    /* (A regra .cols-3 img que você já tem deve funcionar) */
+    width: 100%;
+    height: 260px;
+    object-fit: cover; /* Mude de 'contain' para 'cover' */
+    display: block;
+}
+
+.card-maquina h3 {
+    font-size: 1.25rem;
+    color: #333;
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 0;
+}
+
 /* ===== RESPONSIVIDADE ===== */
 
 /* Tablets */

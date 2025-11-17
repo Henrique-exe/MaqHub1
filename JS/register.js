@@ -9,11 +9,10 @@ document.querySelector('form').addEventListener('submit', function(event) {
   const confirma = document.querySelector('input[placeholder="Confirme sua senha"]').value;
   const telefone = document.querySelector('input[placeholder="Telefone"]').value;
   
-  // Adicionando a captura do gênero, que faltou no seu script original
-  const genero = document.querySelector('input[name="genero"]:checked');
+
 
   // Validação de campos vazios (incluindo gênero)
-  if (!email || !usuario || !senha || !confirma || !telefone || !genero) {
+  if (!email || !usuario || !senha || !confirma || !telefone ) {
     alert("Preencha todos os campos!");
     return;
   }
@@ -43,7 +42,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     usuario: usuario,
     senha: senha, // ATENÇÃO: Armazenar senhas assim não é seguro para produção!
     telefone: telefone,
-    genero: genero.id // Salva o ID (male, feminino, outro)
+  
   };
 
   // 4. Adiciona o novo usuário ao array
