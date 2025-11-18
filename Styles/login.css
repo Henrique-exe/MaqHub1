@@ -9,6 +9,7 @@
 
 
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -21,40 +22,31 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /* Usa a cor de fundo bege do seu site */
     background-color: var(--background-color, #FEF5D9);
 }
 
-/* O container principal que segura as duas colunas */
 .login-wrapper {
     width: 90%;
     max-width: 1000px;
-    /* Largura máxima do card */
     display: flex;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    /* Para o border-radius funcionar na imagem */
+
 }
 
-/* Coluna da Esquerda (Imagem) */
+
 .login-image {
     flex: 1;
-    /* Ocupa metade do espaço */
-    /* TROQUE ESTA IMAGEM por uma sua. 
-       Usei uma das suas imagens de produto como exemplo.
-    */
     background: url('../Icons/image.png') no-repeat center center;
     background-size: cover;
     min-height: 400px;
-    /* Altura mínima para mobile */
 }
 
-/* Coluna da Direita (Formulário) */
+
 .login-form {
     flex: 1;
-    /* Ocupa a outra metade */
     padding: 40px 50px;
     display: flex;
     flex-direction: column;
@@ -66,21 +58,19 @@ body {
     font-weight: 700;
     color: #333;
     margin-bottom: 5px;
-     text-align: center;  /* Centraliza o texto */
-  
+    text-align: center;
+
 }
 
-/* O novo código: */
+
 .login-form .subtitle {
     font-size: 1rem;
     color: #777;
     margin-bottom: 35px;
-    
-    /* ADICIONE ESTAS LINHAS: */
-    text-align: center;  /* Centraliza o texto */
-    font-weight: 400;    /* Deixa a fonte um pouco mais encorpada */
+    text-align: center;
+    font-weight: 400;
 }
-/* Estilo dos Inputs */
+
 .input-box {
     position: relative;
     width: 100%;
@@ -92,20 +82,18 @@ body {
     width: 100%;
     height: 100%;
     background-color: #f7f7f7;
-    /* Fundo do input */
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
     color: #333;
     padding: 0 20px 0 45px;
-    /* Espaço para o ícone */
     outline: none;
     transition: border-color 0.3s ease;
 }
 
 .input-box input:focus {
     border-color: var(--primary-color-gold);
-    /* Borda dourada ao focar */
+
 }
 
 .input-box input::placeholder {
@@ -122,7 +110,6 @@ body {
     color: #777;
 }
 
-/* "Lembrar-me" */
 .remember-forgot {
     display: flex;
     justify-content: space-between;
@@ -137,11 +124,10 @@ body {
     margin-right: 5px;
 }
 
-/* Botão de Login */
+
 .login-btn {
     width: 100%;
     height: 45px;
-    /* Usa sua cor dourada */
     background: var(--primary-color-gold);
     border: none;
     border-radius: 8px;
@@ -153,11 +139,10 @@ body {
 }
 
 .login-btn:hover {
-    /* Usa sua cor amarela mais clara no hover */
     background: var(--primary-color);
 }
 
-/* Link de Registro */
+
 .register {
     font-size: 14.5px;
     text-align: center;
@@ -168,7 +153,6 @@ body {
 
 .register p a {
     color: var(--primary-color-gold);
-    /* Link dourado */
     text-decoration: none;
     font-weight: 600;
 }
@@ -177,11 +161,10 @@ body {
     text-decoration: underline;
 }
 
-/* Responsividade (para celulares) */
+
 @media (max-width: 768px) {
     .login-wrapper {
         flex-direction: column;
-        /* Empilha as colunas */
         width: 90%;
         margin: 20px 0;
     }
@@ -191,9 +174,7 @@ body {
     }
 
     .login-image {
-        /* No mobile, a imagem fica como um "banner" no topo */
         min-height: 200px;
         border-radius: 12px 12px 0 0;
-        /* Arredonda só o topo */
     }
 }

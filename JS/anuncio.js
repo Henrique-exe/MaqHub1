@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Pega o ID do produto no URL (ex: ?id=user_12345)
+
     const urlParams = new URLSearchParams(window.location.search);
     const produtoId = urlParams.get('id');
 
@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Carrega a lista de produtos do localStorage
+ 
     const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
     
-    // Encontra o produto específico pelo ID
+
     const produto = produtos.find(p => p.id === produtoId);
 
     if (!produto) {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // --- Preenche a Página com os Dados do Produto ---
+
 
     document.title = `${produto.nome} - MaqHub`;
     document.getElementById("main-product-image").src = produto.imagem;
@@ -36,18 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("product-description").innerHTML = `<p>${produto.descricao}</p>`;
     document.getElementById("descricao").style.display = "block";
 
-    // --- Adiciona funcionalidade aos botões ---
 
-    // (O 'produto.js' não serve aqui, pois ele é para os estáticos)
-    
-    // Adicionar ao Carrinho
     document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-        adicionarAoCarrinho(produto); // Função do carrinho.js
+        adicionarAoCarrinho(produto); 
     });
 
-    // Adicionar aos Favoritos
+   
     document.getElementById("add-to-fav-btn").addEventListener("click", () => {
-        adicionarFavorito(produto); // Função do favoritos-home.js
+        adicionarFavorito(produto);
         alert("Adicionado/Removido dos favoritos!");
     });
 });

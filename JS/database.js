@@ -1,5 +1,3 @@
-// Este é o "índice" de todos os produtos que existem no site.
-// A busca vai usar este arquivo.
 
 const TODOS_OS_PRODUTOS = [
     {

@@ -22,7 +22,6 @@ function adicionarAoCarrinho(produto) {
 }
 
 
-// ------------------ EXIBIR CARRINHO EM PÁGINA PRÓPRIA ----------------------
 
 document.addEventListener("DOMContentLoaded", () => {
     const cart = JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartItems = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
 
-    if (!cartItems || !cartTotal) return; // evita erros se não estiver na página do carrinho
+    if (!cartItems || !cartTotal) return; 
 
     function atualizarCarrinho() {
         cartItems.innerHTML = "";
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cartTotal.textContent = total.toFixed(2);
 
-        // Remover item
+        
         document.querySelectorAll(".remove-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 const index = btn.getAttribute("data-index");

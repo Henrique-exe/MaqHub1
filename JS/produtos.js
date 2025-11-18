@@ -1,4 +1,3 @@
-// JS/produtos.js (Versão Atualizada)
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -15,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productList.innerHTML = ""; 
 
     produtos.forEach(produto => {
-        // ***** MUDANÇA PRINCIPAL AQUI *****
-        // Criamos um link que leva à nossa página de template, passando o ID
+
         productList.innerHTML += `
             <div classa="produto-card">
                 <a href="anuncio.html?id=${produto.id}">
@@ -30,4 +28,3 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
 });
-//Nota: Para os cartões (.produto-card) ficarem iguais aos da index.html, copie os estilos de .product e .cols-4 do Globals.css e aplique-os ao .produto-card e #product-list.

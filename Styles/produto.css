@@ -1,23 +1,19 @@
-/* Styles/produto.css */
-
-/* Define a fonte principal, herdando do seu global, mas garantindo */
 :root {
-     --primary-color: #F7C31B;
+    --primary-color: #F7C31B;
     --secondary-color: #3D0066;
     --background-color: #ccc4ab;
     --secondary-color-light: #8238B3;
     --primary-color-gold: #C78D17;
+    --primary-color-gold-dark: #6e5118;
     --font-family: 'Poppins', sans-serif;
-
-
-
 }
+
 body {
     font-family: 'Poppins', 'Arimo', sans-serif;
-    background-color: var(--background-color); /* Um fundo levemente cinza */
+    background-color: var(--background-color);
 }
 
-/* Container principal da página de produto */
+
 .product-page-container {
     width: 90%;
     max-width: 1300px;
@@ -28,29 +24,27 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* * SEÇÃO SUPERIOR: IMAGENS E TÍTULO
- */
 .product-main-info {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    flex-wrap: wrap;
     gap: 25px;
 }
 
-/* Coluna 1: Thumbnails */
+
 .product-thumbnails {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    width: 100px; /* Largura fixa para thumbnails */
+    width: 100px;
 }
 
 .thumbnail-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 400px; /* Altura máxima antes de rolar */
-    overflow-y: auto; /* Permite rolar se houver muitos thumbs */
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .thumbnail-item {
@@ -64,7 +58,7 @@ body {
 
 .thumbnail-item:hover,
 .thumbnail-item.active {
-    border-color: #cc0000; /* Cor vermelha da Case IH (exemplo) */
+    border-color: var(--primary-color-gold);
 }
 
 .thumbnail-item img {
@@ -88,10 +82,10 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Coluna 2: Imagem Principal */
+
 .product-main-image {
-    flex: 1; /* Ocupa o espaço principal */
-    min-width: 300px; /* Largura mínima */
+    flex: 1;
+    min-width: 300px;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 20px;
@@ -108,9 +102,9 @@ body {
     object-fit: contain;
 }
 
-/* Coluna 3: Detalhes do Produto */
+
 .product-info-details {
-    flex: 1; /* Ocupa o espaço restante */
+    flex: 1;
     min-width: 300px;
     padding-left: 20px;
 }
@@ -131,7 +125,7 @@ body {
 }
 
 .cta-button {
-    background-color: #cc0000; /* Vermelho forte */
+    background-color:var(--primary-color-gold);
     color: #ffffff;
     border: none;
     padding: 15px 30px;
@@ -146,7 +140,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #a30000; /* Vermelho mais escuro */
+    background-color: var(--primary-color-gold-dark);
 }
 
 .product-tags {
@@ -163,8 +157,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* * SEÇÃO INFERIOR: DESCRIÇÃO
- */
 .product-description-area {
     margin-top: 50px;
     border-top: 1px solid #eee;
@@ -193,15 +185,15 @@ body {
     color: #000;
 }
 
-/* Linha azul (ou vermelha) da aba ativa */
+
 .description-tabs li.active a::after {
     content: '';
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #cc0000; /* Usei o vermelho da marca */
+    background-color: var(--primary-color-gold);
     position: absolute;
-    bottom: -2px; /* Alinha com a borda de baixo */
+    bottom: -2px;
     left: 0;
 }
 
@@ -224,35 +216,37 @@ body {
 
 .description-content ul li {
     margin-bottom: 10px;
-}.tda-button {
-    background-color: #cc0000; /* Vermelho forte */
+}
+
+.tda-button {
+    background-color: var(--primary-color-gold);
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     border-radius: 5px;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    width: 75%;
+    width: 100%;
     margin-bottom: 25px;
-    
-}
-/* Em Styles/produto.css (adicionar no final) */
 
-/* Correção para o layout do anuncio.html
-  (Quando os thumbnails não existem) 
-*/
+}
+
+.tda-button:hover {
+    background-color: var(--primary-color-gold-dark);
+}
+
 .product-main-info .product-main-image {
-    flex-grow: 1; /* Faz a imagem crescer se não houver thumbnails */
+    flex-grow: 1;
 }
 
 .product-main-info .product-info-details {
-    flex-grow: 1.2; /* Faz os detalhes crescerem um pouco mais */
+    flex-grow: 1.2;
 }
 
-/* Garante que o botão de favoritar tenha o ícone (copiado do anuncio.html) */
+
 .tda-button svg {
     width: 20px;
     height: 20px;

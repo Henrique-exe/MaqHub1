@@ -1,4 +1,4 @@
-// Trocar imagem principal ao clicar nas thumbnails
+
 document.querySelectorAll(".thumbnail-item img").forEach(img => {
     img.addEventListener("click", function () {
         document.getElementById("main-product-image").src = this.src;
@@ -8,7 +8,7 @@ document.querySelectorAll(".thumbnail-item img").forEach(img => {
     });
 });
 
-// Tabs Descrição / Especificações
+
 document.querySelectorAll(".description-tabs ul li a").forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();

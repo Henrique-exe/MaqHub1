@@ -10,13 +10,13 @@
 
 
 }
-/* Reutiliza o .admin-container do admin.css mas adiciona espaçamento */
+
 .perfil-container {
     padding-top: 20px;
 }
 
 .perfil-container h1 {
-    font-size: 2.5rem; /* Título maior */
+    font-size: 2.5rem; 
     color: #333;
     margin-bottom: 30px;
     border-bottom: 1px solid #eee;
@@ -31,11 +31,10 @@
     margin-bottom: 15px;
 }
 
-/* Card "Meus Dados" */
 #dados-usuario {
-    background-color: #f9f9f9; /* Fundo suave */
+    background-color: #f9f9f9;
     border: 1px solid #eee;
-    padding: 30px; /* Mais espaçamento interno */
+    padding: 30px; 
 }
 
 .input-grupo {
@@ -53,7 +52,7 @@
 .input-grupo label {
     font-weight: 600;
     color: #333;
-    flex-basis: 120px; /* Largura fixa para alinhar */
+    flex-basis: 120px; 
 }
 .input-grupo p {
     font-weight: 500;
@@ -61,20 +60,20 @@
     margin: 0;
 }
 
-/* Formulário de Anúncio */
+
 #product-form {
     margin-top: 15px;
-    /* (O estilo .form-admin do admin.css já se aplica aqui) */
+
 }
 
-/* Melhoria no input de ficheiro */
+
 #product-form input[type="file"] {
     padding: 10px;
     background-color: #f7f7f7;
     cursor: pointer;
 }
 
-/* Botão de Publicar (usando cores do :root) */
+
 #product-form .cta-button {
     background-color: var(--primary-color-gold);
     font-weight: 600;

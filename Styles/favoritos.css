@@ -4,13 +4,14 @@
     --background-color: #ccc4ab;
     --secondary-color-light: #8238B3;
     --primary-color-gold: #C78D17;
+    --primary-color-gold-dark: #6e5118;
     --font-family: 'Poppins', sans-serif;
 
 
 
 }
 
-/* ---- Estrutura da Página ---- */
+
 .favoritos-page {
     padding: 40px 0;
     text-align: center;
@@ -23,46 +24,39 @@
 .underline {
     width: 80px;
     height: 4px;
-    background: #1a2bff;
+    background: var(--primary-color-gold);
     margin: 10px auto 30px auto;
     border-radius: 4px;
 }
 
-/* ---- Grade de Favoritos (Responsiva) ---- */
+
 .favoritos-grid {
     width: 90%;
     margin: 0 auto;
     display: grid;
-    /* Cria colunas flexíveis: 
-      - Mínimo de 250px por card.
-      - 'auto-fit' cria quantas colunas couberem.
-      - '1fr' faz com que elas cresçam para preencher o espaço.
-    */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 
-/* ---- Card Individual ---- */
+
 .fav-card {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px #00000015; /* Sombra mais suave */
+    box-shadow: 0 2px 8px #00000015;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Flexbox para alinhar o botão "Remover" no fundo */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Faz os cards na mesma linha terem a mesma altura */
+    height: 100%;
 }
 
 .fav-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px #00000020; /* Sombra mais forte no hover */
+    box-shadow: 0 4px 12px #00000020;
 }
 
-/* Agrupador clicável (Imagem + Nome) */
+
 .fav-card-clickable {
     cursor: pointer;
     text-align: center;
@@ -72,19 +66,19 @@
     width: 100%;
     height: 200px;
     object-fit: contain;
-    margin-bottom: 15px; /* Espaço entre imagem e nome */
+    margin-bottom: 15px;
 }
 
 .fav-card h3 {
     font-size: 1.1rem;
     color: #333;
     margin: 0;
-    margin-bottom: 20px; /* Espaço ANTES do botão */
+    margin-bottom: 20px;
+
 }
 
-/* ---- Botão Remover (NOVO) ---- */
 .fav-remove-btn {
-    background-color: #ff4d4d; /* Vermelho para "remover" */
+    background-color: var(--primary-color-gold);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -93,19 +87,19 @@
     font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    width: 100%; /* Botão ocupa a largura toda */
+    width: 100%;
+
 }
 
 .fav-remove-btn:hover {
-    background-color: #cc0000; /* Vermelho mais escuro */
+    background-color: var(--primary-color-gold-dark);
 }
 
-/* ---- Mensagem de "Vazio" (Bônus) ---- */
 .empty-message {
-    font-size: 1.2rem;
+    font-weight: 1.8rem;
+    font-size: 1.4rem;
     color: #888;
     text-align: center;
-    /* Faz a mensagem ocupar toda a largura da grade */
-    grid-column: 1 / -1; 
+    grid-column: 1 / -1;
     margin-top: 40px;
 }

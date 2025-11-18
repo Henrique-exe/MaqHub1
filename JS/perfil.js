@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Carrega usuário logado
+ 
     const dadosUsuario = sessionStorage.getItem("usuarioLogado");
     if (!dadosUsuario) {
         alert("Você precisa estar logado para ver esta página.");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const usuarioLogado = JSON.parse(dadosUsuario);
 
-    // Preenche os campos do perfil
+
     const elUsuario = document.getElementById("user-usuario");
     const elEmail = document.getElementById("user-email");
     const elTelefone = document.getElementById("user-telefone");
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (elEmail) elEmail.textContent = usuarioLogado.email || "—";
     if (elTelefone) elTelefone.textContent = usuarioLogado.telefone || "—";
 
-    // --- Lógica para publicar novo produto ---
     const form = document.getElementById("product-form");
     if (!form) return;
 
@@ -41,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reader.onload = function () {
             const imagemDataUrl = reader.result;
 
-            // Cria ID simples (timestamp + random)
+     
             const id = `prod_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
             const novoProduto = {
@@ -56,13 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-            produtos.unshift(novoProduto); // adiciona no início
+            produtos.unshift(novoProduto);
             localStorage.setItem("produtos", JSON.stringify(produtos));
 
             alert("Anúncio publicado com sucesso!");
             form.reset();
-            // opcional: redirecionar para a página do anúncio
-            // window.location.href = `anuncio.html?id=${id}`;
+           
         };
         reader.readAsDataURL(file);
     });
