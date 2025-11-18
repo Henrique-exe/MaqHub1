@@ -162,19 +162,3 @@ body {
 }
 
 
-@media (max-width: 768px) {
-    .login-wrapper {
-        flex-direction: column;
-        width: 90%;
-        margin: 20px 0;
-    }
-
-    .login-form {
-        padding: 30px;
-    }
-
-    .login-image {
-        min-height: 200px;
-        border-radius: 12px 12px 0 0;
-    }
-}

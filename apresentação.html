@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação MaqHub</title>
+    <!-- Importando fontes e cores do projeto original para manter identidade -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #F7C31B;
+            --secondary-color: #3D0066;
+            --background-color: #FEF5D9;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: white;
+            overflow: hidden;
+            /* Impede rolagem, estilo slide */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container do Slide */
+        .slide-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 600px;
+            background-color: white;
+            color: var(--text-color);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Conteúdo do Slide */
+        .slide {
+            display: none;
+            /* Esconde todos por padrão */
+            height: 100%;
+            padding: 60px;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .slide.active {
+            display: flex;
+            /* Mostra o ativo */
+        }
+
+        /* Tipografia */
+        h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color-gold);
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 20px;
+        }
+
+        p,
+        li {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        /* Destaques de código */
+        .code-box {
+            background-color: #f4f4f4;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            font-family: monospace;
+            margin-top: 15px;
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        /* Controles de Navegação */
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Barra de progresso */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 8px;
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        /* Logo no canto */
+        .watermark {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container">
+        <div class="watermark">MaqHub</div>
+
+        <!-- SLIDE 1: Capa -->
+        <div class="slide active">
+            <h1 style="font-size: 5rem; color: var(--primary-color);">MaqHub</h1>
+            <h2 style="border: none; color: var(--secondary-color);">E-commerce de Máquinas Pesadas</h2>
+            <p style="margin-top: 20px;">Desenvolvimento Web Front-End</p>
+            <p><strong>Autor:</strong> Pablo Henrique, Diego Paim, Erik Nogueira, Saymon Galvão</p>
+        </div>
+
+        <!-- SLIDE 2: Funcionalidades -->
+        <div class="slide">
+            <h2>Funcionalidades Implementadas</h2>
+            <ul>
+                <li><strong>Navegação:</strong> Menu responsivo e Slider de destaques.</li>
+                <li><strong>Busca Inteligente:</strong> Filtro em tempo real (keyup) integrando produtos estáticos e do
+                    localStorage.</li>
+                <li><strong>Carrinho de Compras:</strong> Adição, remoção e somatória automática.</li>
+                <li><strong>Sistema de Favoritos:</strong> Lista de desejos persistente.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 3: DOM -->
+        <div class="slide">
+            <h2>Manipulação do DOM</h2>
+            <p>O <em>Document Object Model</em> foi manipulado para criar uma experiência SPA (Single Page Application)
+                sem recarregamentos constantes.</p>
+            <h3>Aplicações:</h3>
+            <ul>
+                <li>Injeção de HTML dinâmico para listar produtos (`innerHTML`).</li>
+                <li>Alteração de classes CSS para menus e abas (`classList.toggle`).</li>
+                <li>Criação de elementos para resultados de busca (`document.createElement`).</li>
+            </ul>
+            <div class="code-box">
+                document.getElementById("cart-items").innerHTML += `&lt;div class="item"&gt;...&lt;/div&gt;`;
+            </div>
+        </div>
+
+        <!-- SLIDE 4: EventListeners -->
+        <div class="slide">
+            <h2>EventListeners</h2>
+            <p>Utilizados para capturar interações do usuário e executar lógicas específicas.</p>
+            <h3>Principais Eventos:</h3>
+            <ul>
+                <li><strong>'click':</strong> Botões de compra, slider, remover item.</li>
+                <li><strong>'submit':</strong> Validação e envio de formulários (Login/Cadastro).</li>
+                <li><strong>'keyup':</strong> Barra de pesquisa instantânea.</li>
+                <li><strong>'DOMContentLoaded':</strong> Carregamento inicial de dados do Storage.</li>
+            </ul>
+            <div class="code-box">
+                searchInput.addEventListener('keyup', () => { filtrarProdutos(); });
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Validação -->
+        <div class="slide">
+            <h2>Validação de Dados</h2>
+            <p>Implementada no JavaScript para garantir integridade antes do armazenamento.</p>
+            <h3>Lógicas aplicadas:</h3>
+            <ul>
+                <li>Verificação de campos vazios.</li>
+                <li>Confirmação de senha igual à senha digitada.</li>
+                <li>Verificação de e-mail já cadastrado (evita duplicidade).</li>
+            </ul>
+            <div class="code-box">
+                if (senha !== confirma) { alert("As senhas não conferem!"); return; }
+            </div>
+        </div>
+
+        <!-- SLIDE 6: LocalStorage -->
+        <div class="slide">
+            <h2>LocalStorage & Persistência</h2>
+            <p>Simulação de Banco de Dados utilizando a memória do navegador.</p>
+            <h3>Fluxo de Dados (JSON):</h3>
+            <ul>
+                <li><strong>Salvar:</strong> `JSON.stringify(array)` converte objetos em texto.</li>
+                <li><strong>Ler:</strong> `JSON.parse(texto)` converte texto em objetos.</li>
+                <li><strong>Uso:</strong> Sessão de usuário logado, Itens do Carrinho, Lista de Favoritos e Banco de
+                    Produtos novos.</li>
+            </ul>
+            <div class="code-box">
+                const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+            </div>
+        </div>
+
+       <div class="slide">
+            <h2>Acesse o Projeto</h2>
+            <p>Escaneie o QR Code abaixo para testar a aplicação em seu dispositivo ou acessar o repositório:</p>
+            
+            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
+                <img src="img/MaqHub-1024.jpeg" alt="QR Code do Projeto" 
+                     style="width: 250px; height: 250px; object-fit: contain; border: 4px solid var(--primary-color); padding: 10px; background: white; border-radius: 10px;">
+                
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">https://henrique-exe.github.io/MaqHub1/</p>
+            </div>
+        </div>
+        <!-- SLIDE 7: Conclusão -->
+            <div class="slide">
+            <h1 style="color: var(--secondary-color);">Obrigado!</h1>
+            <p>O projeto MaqHub integra conceitos essenciais de Front-End moderno, focando em usabilidade,
+                responsividade e persistência de dados.</p>
+        </div>
+
+        <!-- Controles -->
+        <div class="progress-bar" id="progress"></div>
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">Anterior</button>
+            <button id="nextBtn" onclick="changeSlide(1)">Próximo</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlide() {
+            // Remove classe active de todos
+            slides.forEach(slide => slide.classList.remove('active'));
+            // Adiciona no atual
+            slides[currentSlide].classList.add('active');
+
+            // Atualiza barra de progresso
+            const progress = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            // Atualiza estado dos botões
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+
+            if (currentSlide === slides.length - 1) {
+                nextBtn.innerText = "Fim";
+            } else {
+                nextBtn.innerText = "Próximo";
+            }
+        }
+
+        function changeSlide(direction) {
+            // --- NOVA LÓGICA: Botão Fim ---
+            // Se o usuário clicar em "Próximo" (direction 1) e já estiver no último slide...
+            if (direction === 1 && currentSlide === slides.length - 1) {
+                window.location.href = "index.html"; // Redireciona para a Home
+                return; // Para a execução da função aqui
+            }
+
+            // Lógica padrão de passar slide
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+            updateSlide();
+        }
+
+        // Inicializa
+        updateSlide();
+
+        // Navegação por teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+    </script>
+</body>
+
+</html>
